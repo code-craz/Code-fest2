@@ -17,7 +17,7 @@ entry = Entry(root, width= 42)
 entry.place(relx= .5, rely= .5, anchor= CENTER)
 
 #Inititalize a Label widget
-label= Label(root, text="", font=('Helvetica 13'))
+label= Label(root, text="")
 label.pack()
 
 #Create a Button to get the input data

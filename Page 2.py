@@ -20,16 +20,21 @@ def emergency():
     #Create input field and match with dictionary 
     a_dict = {'Bleeding': 'Solution', 'b': 200, 'c': 300}
     
-    Label(new_win, text="What is your emergency?").pack()
-    e= Entry(new_win).pack()
+    Label(new_win, text="What is your emergency?").grid(row=1, column=1)
+   
 
-    i= e.get()
+   # Define a function to return the Input data
+    def get_data():
+        Label.config(text= entry.get())
 
-    if i in a_dict :
-        print (a_dict[i])
-    else :
-        print (i, 'is not found in the dictionary')
-    
+   #Create an Entry Widget
+    entry = Entry(new_win, width= 42)
+    entry.grid(row=2, column=1)
+
+   #Check if key in dictioary and print response
+    if entry.get() in a_dict:
+        print(a_dict[entry.get()])
+
    
     
 
