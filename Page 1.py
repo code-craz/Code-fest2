@@ -15,6 +15,8 @@ docn= Entry(root)
 #Create function for opening page 2
 def openpage2():
     open("Page 2.py")
+
+
 #Open page 2
 p2op= Button(root, text="Open next page", command=openpage2)
 #Postition the questions 
