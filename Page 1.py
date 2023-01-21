@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as ttk
 import pyttsx3
 
+#Initialize tkinter
 root=Tk()
 root.title("Code fest health bot")
 

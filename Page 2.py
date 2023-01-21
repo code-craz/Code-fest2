@@ -2,10 +2,11 @@ from tkinter import *
 import tkinter as ttk
 import pyttsx3
 
+#Initialize tkinter
 root=Tk()
 root.title("Code fest health bot")
 
-
+#Create function for emergency 
 
 def emergency():
     new_win= Toplevel(root)
@@ -16,6 +17,8 @@ def emergency():
     Checkbutton(new_win, text="Option 1", variable=var, command=lambda:print("Sup")).pack()
     Checkbutton(new_win, text="Option 2", variable=var, command=lambda:print("Bro")).pack()
 
+#
+#Check if user is in an emergency. (Using buttons for check)
 emcheck= Label(root, text= "Are you in an emergency?")
 y= Button(root, text="Yes", command=emergency)
 space= Label(root, text="      ")
