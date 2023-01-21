@@ -1,0 +1,32 @@
+#take from: https://stackoverflow.com/questions/7546050/switch-between-two-frames-in-tkinter
+# Multi-frame tkinter application v2.3
+import tkinter as tk
+import Page 1 as p1
+import page 2 as p2
+
+class SampleApp(tk.Tk):
+    def __init__(self):
+        tk.Tk.__init__(self)
+        self._frame = None
+        self.switch_frame(StartPage)
+
+    def switch_frame(self, frame_class):
+        """Destroys current frame and replaces it with a new one."""
+        new_frame = frame_class(self)
+        if self._frame is not None:
+            self._frame.destroy()
+        self._frame = new_frame
+        self._frame.pack()
+
+class StartPage(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master)
+        tk.Label(self, text="This is the start page").pack(side="top", fill="x", pady=10)
+        tk.Button(self, text="Open page one",
+                  command=lambda: master.switch_frame(p1.PageOne)).pack()
+        tk.Button(self, text="Open page two",
+                  command=lambda: master.switch_frame(p2.PageTwo)).pack()
+
+if __name__ == "__main__":
+    app = SampleApp()
+    app.mainloop()
