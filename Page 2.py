@@ -6,14 +6,29 @@ import pyttsx3
 root=Tk()
 root.title("Code fest health bot")
 
+#Aarav place background pic
+
 #Create function for emergency 
 
 def emergency():
+    #Create a new window
     new_win= Toplevel(root)
     new_win.title("Health bot emergency stage")
 
+    #Create input field and match with dictionary 
+    a_dict = {'Bleeding': 'Solution', 'b': 200, 'c': 300}
+    
     Label(new_win, text="What is your emergency?").pack()
     e= Entry(new_win).pack()
+
+    i= e.get()
+
+    if i in a_dict :
+        print (a_dict[i])
+    else :
+        print (i, 'is not found in the dictionary')
+    
+   
     
 
 #Create chronic function
