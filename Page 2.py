@@ -34,9 +34,10 @@ def emergency():
    #Check if key in dictioary and print response
     if entry.get() in a_dict:
         print(a_dict[entry.get()])
-
-   
-    
+        
+    else:
+        print(entry.get(), 'is not found in dictionary')
+        
 
 #Create chronic function
 def chronic():
