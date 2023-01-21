@@ -1,4 +1,3 @@
-
 from tkinter import *
 import tkinter as ttk
 import pyttsx3
@@ -6,7 +5,7 @@ import pyttsx3
 root=Tk()
 root.title("Code fest health bot")
 
-#Hello  
+
 
 def emergency():
     new_win= Toplevel(root)
