@@ -18,7 +18,7 @@ def emergency():
     new_win.title("Health bot emergency stage")
 
     #Create input field and match with dictionary 
-    a_dict = {'Bleeding': 'Solution', 'b': 200, 'c': 300}
+    a_dict = {'Bleeding': 'Solution', 'b': 211, 'c': 300}
     
     Label(new_win, text="What is your emergency?").grid(row=1, column=1)
    
@@ -38,7 +38,6 @@ def emergency():
     else:
         print(entry.get(), 'is not found in dictionary')
         
-
 #Create chronic function
 def chronic():
     #Create a new window
