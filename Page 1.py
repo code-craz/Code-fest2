@@ -1,5 +1,5 @@
 from tkinter import *
-import tkinter as ttk
+from tkinter import ttk
 import pyttsx3
 import sys
 
