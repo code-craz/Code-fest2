@@ -12,10 +12,9 @@ def emergency():
     new_win= Toplevel(root)
     new_win.title("Health bot emergency stage")
 
-    var=StringVar
-    Label(new_win, text="Is your emergency any of the folowing?").pack()
-    Checkbutton(new_win, text="Option 1", variable=var, command=lambda:print("do...")).pack()
-    Checkbutton(new_win, text="Option 2", variable=var, command=lambda:print("do...")).pack()
+    Label(new_win, text="What is your emergency?").pack()
+    e= Entry(new_win).pack()
+    
 
 #Create chronic function
 def chronic():
