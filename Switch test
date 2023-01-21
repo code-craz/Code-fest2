@@ -1,0 +1,13 @@
+from tkinter import *
+import os
+
+def open_file():
+    os.system('C:\Users\Sanath\Projects\CodeFestSan\Code-fest2\Page 2.py')
+
+root=Tk()
+
+btn = Button(root, text='Open Page 2.py', command=open_file)
+btn.pack()
+
+root.mainloop()
+    

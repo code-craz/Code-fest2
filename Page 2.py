@@ -1,12 +1,14 @@
 from tkinter import *
 import tkinter as ttk
 import pyttsx3
+import sys
 
 #Initialize tkinter
 root=Tk()
 root.title("Code fest health bot")
 
 #Aarav place background pic
+
 
 #Create function for emergency 
 

@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter as ttk
 import pyttsx3
+import sys
 
 #Initialize tkinter
 root=Tk()
@@ -16,7 +17,7 @@ docnumb= Label(root, text= "What is your doctor's number?")
 docn= Entry(root)
 #Create function for opening page 2
 def openpage2():
-    open("Page 2.py")
+    open("Page 2.py") 
 
 
 #Open page 2
