@@ -14,8 +14,8 @@ def emergency():
 
     var=StringVar
     Label(new_win, text="Is your emergency any of the folowing?").pack()
-    Checkbutton(new_win, text="Option 1", variable=var, command=lambda:print("U ded")).pack()
-    Checkbutton(new_win, text="Option 2", variable=var, command=lambda:print("U still ded")).pack()
+    Checkbutton(new_win, text="Option 1", variable=var, command=lambda:print("do...")).pack()
+    Checkbutton(new_win, text="Option 2", variable=var, command=lambda:print("do...")).pack()
 
 #Create chronic function
 def chronic():
