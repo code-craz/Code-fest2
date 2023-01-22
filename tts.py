@@ -6,4 +6,6 @@ root= Tk()
 def lookup():
     pass
 
-my_labelfor
+var= StringVar
+
+get_dict()["bleeding"]

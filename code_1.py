@@ -34,29 +34,31 @@ def emergency():
 'severe pain': 'Get some gentle exercise or Breathe right to ease pain.', 
 'heart attack': 'Chew and swallow an aspirin while waiting for emergency help or Begin CPR if the person is unconscious.', 
 'a stroke': 'Call 911 and perform CPR.'}
-    
-    def verydict():
-        #Create an Entry Widget
-        entry = Entry(new_win, width= 42)
-        entry.pack()
-        # Define a function to return the Input data
-        def get_data():
-            Label.config(text= entry.get())
 
-           
-            #Check if key in dictioary and print response
-            if entry.get() in a_dict:
-                Label(a_dict[entry.get()]).pack()
+
+
+    # Define a function to return the Input data
+    def get_data():
         
-            else:
-                print(entry.get(), 'is not found in dictionary')
+        #Check if key in dictioary and print response
+        if entry.get() in a_dict:
+            # Label(a_dict[entry.get()]).pack()
+            entry_text = StringVar()
+            entry2 = Entry(new_win, width= 42, textvariable=entry_text)
+            entry_text.set(a_dict[entry.get()])
+            entry2.pack()
+    
+        else:
+            print(entry.get(), 'is not found in dictionary')
 
 
     Label(new_win, text="What is your emergency?").pack()
-    Button(new_win, text="Check with dictionary", command=verydict).pack()
+    Button(new_win, text="Check with dictionary", command=get_data).pack()
     #Create an Entry Widget
     entry = Entry(new_win, width= 42)
     entry.pack()
+
+
 
    
 #Create chronic function

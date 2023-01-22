@@ -7,8 +7,6 @@ import sys
 root=Tk()
 root.title("Code fest health bot")
 
-#Aarav place backgound pic
-
 #find the user's name
 nametxt= Label(root, text="What is your name?")
 name= Entry(root)
