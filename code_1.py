@@ -59,19 +59,61 @@ def emergency():
     entry.pack()
 
 
+def get_dict():
+    return {'Allergies': 'Over-the-counter (OTC) antihistamines and decongestants may relieve minor symptoms of an allergic reaction.', 
+'Cold': 'Stay hydrated. Water, juice, clear broth or warm lemon water with honey helps loosen congestion and prevents dehydration, rest your body, try honey and add some moisture to the air', 
+'Flu': 'Stay at home and rest and Avoid close contact with well people in your house so you wont make them sick.', 
+'Conjunctivitis': 'You can use cold compresses and artificial tears, which you can purchase over the counter without a prescription.', 
+'Diarrhea': 'Drink plenty of liquids, including water, broths and juices. Avoid caffeine and alcohol. Add semisolid and low-fiber foods gradually as your bowel movements return to normal.', 
+'Headache': 'Rest in a quiet, dark room and Hot or cold compresses to your head or neck and Massage and small amounts of caffeine.', 
+'Mononucleosis': 'Treatment mainly involves taking care of yourself, such as getting enough rest, eating a healthy diet and drinking plenty of fluids.', 
+'Stomach Aches': 'Drinking water. Avoiding lying down. Ginger. BRAT diet. Avoiding smoking and drinking alcohol. Avoiding difficult-to-digest foods. Lime or lemon juice, baking soda, and water.'}
+
 
    
 #Create chronic function
 def chronic():
-    #Create a new window
-    new_win=Toplevel(root)
-    new_win.title("Health bot chronic stage")
-    #Ask for issue
-    Label(new_win, text="Is your issue any of the folowing?").pack()
-    var=StringVar
-    Checkbutton(new_win, text="Option 1", variable=var, command=lambda:print("Sup")).pack()
-    Checkbutton(new_win, text="Option 2", variable=var, command=lambda:print("Bro")).pack()
+        #Create a new window
+    new_win= Toplevel(root)
+    new_win.title("Health bot emergency stage")
 
+    #Create input field and match with dictionary 
+    p_dict = {'Allergies': 'Over-the-counter (OTC) antihistamines and decongestants may relieve minor symptoms of an allergic reaction.', 
+'Cold': 'Stay hydrated. Water, juice, clear broth or warm lemon water with honey helps loosen congestion and prevents dehydration, rest your body, try honey and add some moisture to the air', 
+'Flu': 'Stay at home and rest and Avoid close contact with well people in your house so you wont make them sick.', 
+'Conjunctivitis': 'You can use cold compresses and artificial tears, which you can purchase over the counter without a prescription.', 
+'Diarrhea': 'Drink plenty of liquids, including water, broths and juices. Avoid caffeine and alcohol. Add semisolid and low-fiber foods gradually as your bowel movements return to normal.', 
+'Headache': 'Rest in a quiet, dark room and Hot or cold compresses to your head or neck and Massage and small amounts of caffeine.', 
+'Mononucleosis': 'Treatment mainly involves taking care of yourself, such as getting enough rest, eating a healthy diet and drinking plenty of fluids.', 
+'Stomach Aches': 'Drinking water. Avoiding lying down. Ginger. BRAT diet. Avoiding smoking and drinking alcohol. Avoiding difficult-to-digest foods. Lime or lemon juice, baking soda, and water.'}
+
+
+
+    # Define a function to return the Input data
+    def get_data():
+        
+        #Check if key in dictioary and print response
+        if entry.get() in a_dict:
+            # Label(a_dict[entry.get()]).pack()
+            entry_text = StringVar()
+            entry2 = Entry(new_win, width= 42, textvariable=entry_text)
+            entry_text.set(a_dict[entry.get()])
+            entry2.pack()
+    
+        else:
+            print(entry.get(), 'is not found in dictionary')
+
+
+    Label(new_win, text="What is your emergency?").pack()
+    Button(new_win, text="Check with dictionary", command=get_data).pack()
+    #Create an Entry Widget
+    entry = Entry(new_win, width= 42)
+    entry.pack()
+
+
+
+
+    
 #Check if user is in an emergency. (Using buttons for check)
 emcheck= Label(root, text= "Are you in an emergency?")
 y= Button(root, text="Yes", command=emergency)
