@@ -3,6 +3,42 @@ import tkinter as ttk
 import pyttsx3
 import sys
 
+def Page_2():
+    p2= Toplevel(root)
+    #Check if user is in an emergency. (Using buttons for check)
+    emcheck= Label(p2, text= "Are you in an emergency?")
+    y= Button(p2, text="Yes", command=emergency)
+    space= Label(p2, text="      ")
+    n= Button(p2, text="No", command=chronic)
+    #Place the checks and buttons
+    emcheck.grid(row=1, column=2)
+    y.grid(row=2, column=1)
+    space.grid(row=3, column=1)
+    n.grid(row=4, column= 1)
+
+
+
+root= Tk()
+#find the user's name
+nametxt= Label(root, text="What is your name?")
+name= Entry(root)
+#find the user's doctor name
+docnumb= Label(root, text= "What is your doctor's number?")
+docn= Entry(root)
+p2op= Button(root, text= "Next", command=Page_2)
+#Create function for opening page 2
+ 
+
+
+#Open page 2
+
+#Postition the questions 
+nametxt.grid(row=1, column= 1)
+name.grid(row=2, column=1)
+docnumb.grid(row=3, column=1)
+docn.grid(row=4, column=1)
+#Position the button
+p2op.grid(row= 5, column=2)
 def get_dict():
     return {'bleeding': 'Cover the wound with sterile gauze or a clean cloth.', 
 'breathing difficulties': 'Check the persons airway, breathing, and pulse and loosen any tight clothing.', 
@@ -13,7 +49,6 @@ def get_dict():
 'a stroke': 'Call 911 and perform CPR.'}
 
 #Initialize tkinter
-root=Tk()
 root.title("Code fest health bot")
 
 #Aarav place background pic
@@ -22,6 +57,10 @@ root.title("Code fest health bot")
 #Create function for emergency 
 
 def emergency():
+    call_win= Toplevel(root)
+    call_win.title("Initialize call")
+
+    Label(call_win, text= "Iitializing call, number"+ docn.get()).pack()
     #Create a new window
     new_win= Toplevel(root)
     new_win.title("Health bot emergency stage")
@@ -69,7 +108,7 @@ def get_dict():
 'a stroke': 'Call 911 and perform CPR.'}
 
 #Initialize tkinter
-root=Tk()
+
 root.title("Code fest health bot")
 
 #Aarav place background pic
@@ -131,14 +170,12 @@ def get_dict():
 
 
    
-<<<<<<< HEAD
+
 #Create chronic function
 def chronic():
         #Create a new window
     new_win= Toplevel(root)
     new_win.title("Health bot emergency stage")
-=======
->>>>>>> d0dcabaedf7c13871a1e5e5a192247404de86c75
 
     #Create input field and match with dictionary 
     p_dict = {'Allergies': 'Over-the-counter (OTC) antihistamines and decongestants may relieve minor symptoms of an allergic reaction.', 
@@ -156,11 +193,11 @@ def chronic():
     def get_data():
         
         #Check if key in dictioary and print response
-        if entry.get() in a_dict:
+        if entry.get() in p_dict:
             # Label(a_dict[entry.get()]).pack()
             entry_text = StringVar()
             entry2 = Entry(new_win, width= 42, textvariable=entry_text)
-            entry_text.set(a_dict[entry.get()])
+            entry_text.set(p_dict[entry.get()])
             entry2.pack()
     
         else:
@@ -177,15 +214,5 @@ def chronic():
 
 
     
-#Check if user is in an emergency. (Using buttons for check)
-emcheck= Label(root, text= "Are you in an emergency?")
-y= Button(root, text="Yes", command=emergency)
-space= Label(root, text="      ")
-n= Button(root, text="No", command=chronic)
-#Place the checks and buttons
-emcheck.grid(row=1, column=2)
-y.grid(row=2, column=1)
-space.grid(row=3, column=1)
-n.grid(row=4, column= 1)
 
 root.mainloop()
